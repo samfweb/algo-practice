@@ -1,13 +1,26 @@
+import math
 
 def main():
     t = int(input())
-    for _ in range(t):
-        count = 0
+    out = [0]*t
+    for test in range(t):
+        count0 = 0
+        count2 = 0
+        total = 0
         n = int(input())
+        nums = [int(x) for x in input().split()]
         for i in range(n):
-            for j in range(n)[i+1:]:
-                count += 1 if i+j == i*j else _
-        print(count)
+            if nums[i] == 0:
+                count0 += 1
+            if nums[i] == 2:
+                count2 += 1
+        if count0 > 1:
+            total += sum([x for x in range(1, count0)])
+        if count2 > 1:
+            total += sum([x for x in range(1, count2)])
+        out[test] = total
+    for test in range(t):
+        print(out[test])
 
 
 if __name__ == "__main__":
