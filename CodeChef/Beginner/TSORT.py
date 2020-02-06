@@ -7,9 +7,15 @@
 # Output
 # Output given numbers in non decreasing order.
 
-def turbo_sort(input):
+
+def turbo_sort():
+    int_list = []
+    t = int(input())
+    for i in range(t):
+        int_list.append(int(input()))
+    for j in sorted(int_list):
+        print(j)
 
 
-
-
-if '__name__' == '__main__':
+if __name__ == "__main__":
+    turbo_sort()
