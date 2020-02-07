@@ -18,8 +18,9 @@ import math
 
 # binomial coefficient returns number of ways 'r' elems can be obtained from larger set of 'n' elems
 def ncr(n, r):
-    fac = math.factorial
-    return fac(n) // (fac(r) * fac(n-r))
+    if r == 0 or n == r:
+        return 1
+    return ncr(n - 1, r) + ncr(n - 1, (r - 1))
 
 
 def main():
