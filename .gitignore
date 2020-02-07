@@ -3,3 +3,4 @@
 venv/
 .vscode/
 test.py
+__init__.py
