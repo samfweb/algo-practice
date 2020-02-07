@@ -14,7 +14,6 @@
 # For each test case, print a single line containing one integer ― the number of interesting subsequences.
 
 import math
-from collections import Counter
 
 
 # binomial coefficient returns number of ways 'r' elems can be obtained from larger set of 'n' elems
@@ -29,25 +28,15 @@ def main():
         int_list = []
 
         # get expected input
-        line_1 = input().split(" ")
-        line_2 = input().split(" ")
-
-        k = int(line_1[1])
-
-        # convert line 2 to sorted list of ints
-        for integer in line_2:
-            int_list.append(integer)
-        int_list = sorted(int_list)
+        k = int(input().split()[1])
+        int_list = sorted(list(map(int, input().split())))
 
         # check count of largest number in subset
         max_num = int_list[k-1]
-        count_total = Counter(int_list)[max_num]
-        count_subset = Counter(int_list[0:k])[max_num]
+        count_total = int_list.count(max_num)
+        count_subset = int_list[:k].count(max_num)
 
         print(f"total = {count_total}, subset = {count_subset}")
-
-        # count_max_subset = num_count(int_list[0:k], max_num)
-        # count_max_total = num_count(int_list, max_num)
 
         print(ncr(count_total, count_subset))
 
