@@ -1,6 +1,23 @@
+#ignore all
+*
+
+#but no extensions or directories
+!*.*
+!*/
+
+#but not .py or .cpp
+!*.cpp
 !*.py
+
+#or others
 .idea/
 venv/
 .vscode/
 test.py
 __init__.py
+cpp-practice/
+
+# Executables
+*.exe
+*.out
+*.app
